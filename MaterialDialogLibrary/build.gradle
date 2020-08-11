@@ -33,10 +33,10 @@ dependencies {
     implementation 'androidx.annotation:annotation:1.1.0'
 
     // Material Design Library
-    implementation 'com.google.android.material:material:1.2.0'
+    api 'com.google.android.material:material:1.2.0'
 
     // Lottie Animation Library
-    implementation 'com.airbnb.android:lottie:3.4.1'
+    api 'com.airbnb.android:lottie:3.4.1'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
