@@ -9,6 +9,11 @@
 ![GitHub watchers](https://img.shields.io/github/watchers/PatilShreyas/MaterialDialog-Android?style=social)
 ![Twitter Follow](https://img.shields.io/twitter/follow/imShreyasPatil?label=Follow&style=social)
 
+***
+
+> Lowering the: targetSdkVersion from 19 to 16.
+
+***
 
 # Material Dialogs for Android 📱
 

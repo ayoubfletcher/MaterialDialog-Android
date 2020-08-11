@@ -7,5 +7,5 @@
         android:topRightRadius="16dp" />
     <padding android:top="0dp" />
     <solid
-        android:color="@android:color/white" />
+        android:color="?android:colorBackground" />
 </shape>
