@@ -17,6 +17,7 @@ import com.shreyaspatil.MaterialDialog.interfaces.OnShowListener;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, OnShowListener, OnCancelListener, OnDismissListener {
 
     private MaterialDialog mSimpleDialog;
+    private MaterialDialog mSimpleDialogOne;
     private MaterialDialog mAnimatedDialog;
     private BottomSheetMaterialDialog mSimpleBottomSheetDialog;
     private BottomSheetMaterialDialog mAnimatedBottomSheetDialog;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button mButtonAnimatedDialog = findViewById(R.id.button_animated_dialog);
         Button mButtonBottomSheetDialog = findViewById(R.id.button_simple_bottomsheet_dialog);
         Button mButtonAnimatedBottomSheetDialog = findViewById(R.id.button_animated_bottomsheet_dialog);
+        Button mButtonSimpleDialogOne = findViewById(R.id.button_one_dialog);
 
         // Simple Material Dialog
         mSimpleDialog = new MaterialDialog.Builder(this)
@@ -51,6 +53,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 })
                 .build();
+
+        // Simple Material Dialog One Button
+        mSimpleDialogOne = new MaterialDialog.Builder(this)
+                .setTitle("One Button Dialog")
+                .setMessage("This is just a dialog with one button!")
+                .setCancelable(false)
+                .setPositiveButton("Ok", new MaterialDialog.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        dialogInterface.dismiss();
+                    }
+                }).build();
 
         // Simple BottomSheet Material Dialog
         mSimpleBottomSheetDialog = new BottomSheetMaterialDialog.Builder(this)
@@ -121,6 +135,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
        mButtonBottomSheetDialog.setOnClickListener(this);
        mButtonAnimatedDialog.setOnClickListener(this);
        mButtonAnimatedBottomSheetDialog.setOnClickListener(this);
+        mButtonSimpleDialogOne.setOnClickListener(this);
     }
 
     @Override
@@ -128,6 +143,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.button_simple_dialog :
                 mSimpleDialog.show();
+                break;
+
+            case R.id.button_one_dialog:
+                mSimpleDialogOne.show();
                 break;
 
             case R.id.button_simple_bottomsheet_dialog :

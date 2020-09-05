@@ -46,6 +46,7 @@
             tools:text="Message" />
 
         <LinearLayout
+            android:id="@+id/buttons_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView_message"

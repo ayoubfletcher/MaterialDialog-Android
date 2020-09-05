@@ -9,6 +9,7 @@ import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -74,6 +75,7 @@ public class AbstractDialog implements DialogInterface {
         // Initialize Views
         TextView mTitleView = dialogView.findViewById(R.id.textView_title);
         TextView mMessageView = dialogView.findViewById(R.id.textView_message);
+        LinearLayout mButtonsContainerLayout = dialogView.findViewById(R.id.buttons_container);
         MaterialButton mPositiveButtonView = dialogView.findViewById(R.id.button_positive);
         MaterialButton mNegativeButtonView = dialogView.findViewById(R.id.button_negative);
         mAnimationView = dialogView.findViewById(R.id.animation_view);
@@ -128,6 +130,14 @@ public class AbstractDialog implements DialogInterface {
             });
         } else {
             mNegativeButtonView.setVisibility(View.INVISIBLE);
+        }
+
+        // Remove the unused buttons from the layout
+        if(mNegativeButton == null) {
+            mButtonsContainerLayout.removeView(mNegativeButtonView);
+        }
+        if(mPositiveButton == null) {
+            mButtonsContainerLayout.removeView(mPositiveButtonView);
         }
 
         // If Orientation is Horizontal, Hide AnimationView
